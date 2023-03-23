@@ -1,0 +1,383 @@
+/* GENERAL RULES ——————————————————————————––––––––––––––*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #495057;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.bg-grey {
+  background: #f7f7f7;
+}
+
+section > .container {
+  width: 1170px;
+  margin: auto;
+  display: block;
+  padding: 30px 50px;
+}
+
+/* BANNER ——————————————————————————––––––––––––––––––––––*/
+
+#banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(../images/banner.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 450px;
+  position: relative;
+}
+
+#banner .banner-text {
+  position: absolute;
+  color: #fff;
+  line-height: 1.4;
+  text-align: center;
+  /* align header text */
+  left: 50%;
+  transform: translate(-50%, 30%);
+}
+
+#banner .banner-text h1 {
+  font-size: 44px;
+}
+
+#banner .banner-text span {
+  font-size: 16px;
+}
+
+/* NAVIGATION ——————————————————————————–––––––––––––––––––––––*/
+
+#nav-bar .container {
+  text-align: center;
+  padding: 0;
+  width: 100%;
+}
+
+#nav-bar .container a {
+  display: inline-block;
+  border: 1px solid #dee2e6;
+  color: #343a40;
+  font-size: 14px;
+  width: 160px;
+  height: 60px;
+  line-height: 60px;
+  vertical-align: middle;
+  text-decoration: none;
+  margin-left: -5px;
+}
+
+#nav-bar #profile {
+  width: 300px;
+  position: relative;
+}
+
+.icon-intro {
+  color: #199cdb;
+}
+
+/* Yêu cầu nâng cao: avatar */
+#profile img {
+  width: 135px;
+  height: 135px;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+  /* Căn giữa avatar */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* THÔNG TIN CÁ NHÂN ——————————————————————————–––––––––––––––––––––*/
+.about-right {
+  background-color: #e9ecef;
+}
+
+/* THÔNG TIN NGHỀ NGHIỆP ——————————————————————————–––––––––––––––––*/
+#job-info .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.job,
+.job-skills {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-template-rows: 80px max-content;
+  row-gap: 20px;
+  width: 100%;
+  border: 1px solid #dee2e6;
+  padding: 25px 25px 50px;
+}
+
+.job-inner {
+  grid-column: 1 / -1;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+}
+
+.section-title {
+  font-size: 28px;
+  align-self: center;
+  margin-bottom: 0;
+}
+
+.ic-job {
+  transform: scale(2.5);
+  color: #868e96;
+  align-self: center;
+  justify-self: center;
+}
+
+.time {
+  font-size: 14px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.time span {
+  background-color: #199cdb;
+  color: #fff;
+  border-radius: 5px;
+  padding: 3px 10px;
+}
+
+/* tạo bullet màu xanh cho từng <li> */
+.job-inner div::before {
+  content: "\2022";
+  color: #199cdb;
+  font-weight: bolder;
+  transform: scale(1.5);
+  position: absolute;
+  left: -15px;
+}
+
+.job-inner li {
+  position: relative;
+}
+
+.job-inner div {
+  padding-left: 10px;
+}
+
+/* SỞ THÍCH ——————————————————————————––––––––––––––––––––––––––––––*/
+.hobby-inner {
+  /* căn chỉnh .hobby-inner trong grid .job-skills */
+  grid-column: 1/-1;
+
+  /* căn chỉnh các phần tử trong .hobby-inner */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, auto));
+  row-gap: 20px;
+  column-gap: 8px;
+  justify-items: center;
+  margin-bottom: 50px;
+}
+
+.job-skills .ic-skill {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 50%;
+  border: 0.5px solid #199cdb;
+  transform: scale(1.5);
+  color: #199cdb;
+  text-align: center;
+}
+
+/* NGÔN NGỮ & KỸ NĂNG ——————————————————————————–––––––––––––––––––––*/
+.skills-inner span {
+  background: #199cdb;
+  display: inline-block;
+  height: 2px;
+  width: 45px;
+  margin-right: 10px;
+}
+
+.skills-inner {
+  grid-column: 1 / -1;
+  line-height: 1.4;
+}
+
+.skills-inner .grey {
+  background: #adb5bd;
+}
+
+/* CHỨNG CHỈ - GIẢI THƯỞNG ——————————————————————————––––––––––––––––––*/
+#certificate .grid-cert {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, max-content);
+  gap: 15px;
+  margin-top: 20px;
+  align-items: center;
+}
+
+#certificate .section-title {
+  margin-bottom: 30px;
+}
+
+/* căn chỉnh từng block certificate */
+.cert-inner {
+  display: flex;
+  gap: 10px;
+}
+
+.analytics-cert {
+  border-left: 1px solid #d6c08d;
+  padding-left: 15px;
+}
+
+.manager-cert {
+  grid-column: 1 / -1;
+  border-top: 1px solid #d6c08d;
+  padding-top: 45px;
+}
+
+#certificate img {
+  max-width: 160px;
+  height: 100px;
+}
+
+.cert-title {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* DỰ ÁN ——————————————————————————––––––––––––––––––––––––––––––––––*/
+.grid-project {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 1fr;
+  column-gap: 20px;
+  margin: 45px 0;
+}
+
+/* căn chỉnh từng cột .project-inner */
+.project-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-inner img {
+  width: 100%;
+}
+
+.project-title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.project-inner-info {
+  display: flex;
+  column-gap: 10px;
+  padding: 10px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.project-inner-info div {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.year {
+  width: 60px;
+  height: 35px;
+  line-height: 35px;
+  background-color: #199cdb;
+  color: #fff;
+  border-radius: 15px;
+  padding: 0 10px;
+  text-align: center;
+}
+
+/* căn chỉnh table */
+.table-head {
+  width: 90px;
+  padding: 0 0 0 10px;
+}
+
+table {
+  height: 100%;
+}
+
+table td {
+  padding: 6px 12px;
+}
+
+.project-inner-info,
+table {
+  border: 1px solid #dee2e6;
+  border-collapse: collapse;
+  margin-top: -1px;
+}
+
+table tr {
+  border-bottom: 1px solid #dee2e6;
+}
+
+table a:link,
+table a:visited,
+table a:hover,
+table a:active {
+  text-decoration: none;
+  color: #199cdb;
+  cursor: pointer;
+}
+
+table a:hover {
+  font-weight: 500;
+}
+
+/* FOOTER */
+#footer .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+  padding: 50px 0;
+  width: 100%;
+}
+
+.ic-footer {
+  display: inline-block;
+  vertical-align: middle;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #199cdb;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+#footer a:link,
+#footer a:visited,
+#footer a:hover,
+#footer a:active {
+  text-decoration: none;
+  color: #495057;
+  cursor: pointer;
+}

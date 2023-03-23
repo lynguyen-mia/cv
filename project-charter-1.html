@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>Digital CV</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+        crossorigin="anonymous">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+
+    /* UTILITIES ––––––––––––––––––––––––––––––––––– */
+    .grid {
+      height: 100vh;
+      overflow: scroll;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 4fr 3fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+      align-items: center;
+      border-bottom: 1px solid rgba(206, 212, 218, 0.5);
+      padding: 10px 0;
+      gap: 10px;
+    }
+
+    .container {
+      height: 100%;
+      padding: 25px;
+    }
+
+    .box {
+      background-color: white;
+    }
+
+    .title {
+      color: var(--bs-primary);
+      font-weight: 700;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #ced4da;
+    }
+
+    .sub-title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    i {
+      justify-self: center;
+    }
+
+    /* TIMELINE ––––––––––––––––––––––––––––––––––– */
+    #timeline {
+      grid-row: 1 / -1;
+      grid-column: 3;
+    }
+
+    #timeline .grid-2 {
+      border: none;
+    }
+
+    #timeline .timeline-border {
+      padding-bottom: 10px;
+      border-bottom: 2px dotted rgba(26, 174, 215, 0.5);
+    }
+
+    /* create circle border for bootstrap icon */
+    #timeline .ic-timeline::before {
+      color: #845ef7;
+      box-shadow: 0 0 0.5px 2px #84623c;
+      border-radius: 50%;
+      vertical-align: 0;
+    }
+
+    /* MEDIA QUERY ––––––––––––––––––––––––––––––––––– */
+
+    /* FOR TABLET & MOBILE */
+    @media (max-width: 992px) {
+
+      .grid,
+      .grid-tablet {
+        display: flex !important;
+        flex-direction: column;
+      }
+
+      .grid-tablet {
+        align-items: center;
+      }
+
+      #scopes {
+        order: -1;
+      }
+
+      #goals {
+        order: -2;
+      }
+
+      #timeline .timeline-border {
+        width: 100%;
+      }
+
+      #timeline .ic-timeline {
+        transform: scale(1.5);
+        margin-left: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid bg-primary">
+
+    <!-- GOALS  -->
+    <div class="box"
+         id="goals">
+      <div class="container">
+        <h2 class="title">Goals</h2>
+        <div class="d-flex flex-column gap-2">
+          <div class="grid-2 grid-tablet">
+            <i class="bi bi-flag-fill bi-ic h2"></i>
+            <div class="d-flex flex-column align-self-start">
+              <p class="sub-title">Goal 1</p>
+              <p>Xây dựng được 1 website CV cá nhân sử dụng HTML, CSS</p>
+            </div>
+          </div>
+          <div class="grid-2 grid-tablet">
+            <i class="bi bi-flag-fill bi-ic h2"></i>
+            <div class="d-flex flex-column align-self-start">
+              <p class="sub-title">Goal 2</p>
+              <p>Làm website có tính năng responsive sử dụng Media Query và Bootstrap</p>
+            </div>
+          </div>
+          <div class="grid-2 grid-tablet">
+            <i class="bi bi-flag-fill bi-ic h2"></i>
+            <div class="d-flex flex-column align-self-start">
+              <p class="sub-title">Goal 3</p>
+              <p>Đưa website CV cá nhân hoàn thiện lên online.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEAM -->
+    <div class="box"
+         id="team">
+      <div class="container">
+        <h2 class="title">Team</h2>
+        <div class="d-flex flex-column gap-2">
+          <div class="grid-2 grid-tablet">
+            <i class="bi bi-person-fill h2 mb-0"></i>
+            <div class="d-flex flex-column justify-items-center align-self-start">
+              <h3 class="sub-title">Member 01</h3>
+              <p>Name: Nguyễn Thị Hương Ly (người thực hiện)</p>
+            </div>
+          </div>
+          <div class="grid-2 grid-tablet">
+            <i class="bi bi-person-fill h2"></i>
+            <div class="d-flex flex-column justify-items-center align-self-start">
+              <h3 class="sub-title">Member 02</h3>
+              <p>Name: FUNIX mentor (người thẩm định)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--SCOPES -->
+    <div class="box"
+         id="scopes">
+      <div class="container">
+        <h2 class="title">Scopes</h2>
+        <div class="d-flex gap-4 mt-3 ms-1 grid-tablet">
+          <div>
+            <h3 class="sub-title">IN</h3>
+            <p>Dự án này đầu ra của môn học Website đầu tiên của chương trình chứng chỉ doanh nghiệp do FUNIX tổ chức.
+            </p>
+          </div>
+          <div>
+            <h3 class="sub-title">OUT</h3>
+            <p>Ứng viên có thể sử dụng sản phẩm website CV này để đi apply với các đối tác trực thuộc chương trình chứng
+              chỉ doanh nghiệp của FUNIX.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRIMARY -->
+    <div class="box"
+         id="primary">
+      <div class="container">
+        <h3 class="title">Primary</h3>
+        <div class="d-flex flex-column gap-2">
+          <div class="d-flex justify-content-center gap-lg-4 grid-tablet mt-2">
+            <i class="bi bi-question-circle-fill h2"></i>
+            <p class="align-self-start">Website có đầy đủ các mục như thông tin ứng viên, about, lý lịch, kinh nghiệm
+              làm việc, sở thích, kĩ năng, chứng chỉ và dự án.
+            </p>
+          </div>
+          <div class="d-flex justify-content-center gap-lg-4 grid-tablet mt-2">
+            <i class="bi bi-question-circle-fill h2"></i>
+            <p class="align-self-start">Website hiển thị tốt trên nhiều thiết bị với kích thước màn hình khác nhau.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="box"
+         id="timeline">
+      <div class="container">
+        <h2 class="title">Timeline</h2>
+        <div class="d-flex flex-column gap-2 mt-3 ms-2">
+          <div class="grid-2 grid-tablet align-items-start">
+            <i class="bi bi-1-circle-fill h2 ic-timeline"></i>
+            <div class="timeline-border">
+              <h3 class="sub-title">Bắt đầu dự án</h3>
+              <p>20/03/2023</p>
+            </div>
+          </div>
+          <div class="grid-2 grid-tablet align-items-start">
+            <i class="bi bi-2-circle-fill h2 ic-timeline"></i>
+            <div class="timeline-border">
+              <h3 class="sub-title">Thẩm định dự án</h3>
+              <p>26/03/2023</p>
+            </div>
+          </div>
+          <div class="grid-2 grid-tablet align-items-start">
+            <i class="bi bi-3-circle-fill h2 ic-timeline"></i>
+            <div class="timeline-border">
+              <h3 class="sub-title">Điểm số của dự án</h3>
+              <p>28/03/2023</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+          integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+          crossorigin="anonymous"></script>
+</body>
+
+</html>
